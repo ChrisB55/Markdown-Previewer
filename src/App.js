@@ -5,8 +5,14 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <textarea id="editor" />
+      <div className="Container">
+        <div className="title">
+          <h1>Markdown Previewer</h1>
+        </div>
+        <div id="main">
+          <textarea id="editor" placeholder="enter text" />
+        </div>
+        <div id="preview">Preview Area</div>
       </div>
     );
   }
