@@ -1,8 +1,16 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: ''
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(e) {
+    this.setState({ value: e.target.value });
+  }
+
   render() {
     return (
       <div className="Container">
@@ -10,9 +18,14 @@ class App extends Component {
           <h1>Markdown Previewer</h1>
         </div>
         <div id="main">
-          <textarea id="editor" placeholder="enter text" />
+          <textarea
+            id="editor"
+            placeholder="enter text"
+            defaultValue={this.state.value}
+            onChange={this.handleChange}
+          />
         </div>
-        <div id="preview">Preview Area</div>
+        <div id="preview">{this.state.value}</div>
       </div>
     );
   }
