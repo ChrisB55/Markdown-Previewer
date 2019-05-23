@@ -7,7 +7,36 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 'Type **Something**'
+      value: `# H1
+## H2
+### H3
+ **bold** 
+ > Block Quote element
+ 
+\`<div>Code Element</div>\`, 
+> Block Quote element
+
+\`\`\`
+// multi-line code element:
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { some.value }
+\`\`\`
+  
+
+
+ [inline-style link ](https://www.google.com)
+
+
+1. List item
+1. Another List Item 
+
+
+
+![Cat](https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=65&w=94)
+`
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -30,7 +59,6 @@ class App extends Component {
         <div id="main">
           <textarea
             id="editor"
-            placeholder="enter text"
             defaultValue={this.state.value}
             onChange={this.handleChange}
           />
